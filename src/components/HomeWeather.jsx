@@ -45,7 +45,7 @@ const HomeWeather = function (props) {
 
   return (
     <>
-      <Container className="mt-4 text-center d-flex flex-column">
+      <Container className="mt-4 align-items-center d-flex flex-column">
         <div className="mb-4">
           <Button
             className="mx-3 rounded-5"
@@ -57,7 +57,7 @@ const HomeWeather = function (props) {
           <Button
             className="mx-3 rounded-5"
             style={{ width: "6rem" }}
-            onClick={() => setFiveCity("toronto")}
+            onClick={() => setFiveCity("TORONTO")}
           >
             TORONTO
           </Button>
@@ -71,14 +71,14 @@ const HomeWeather = function (props) {
           <Button
             className="mx-3 rounded-5"
             style={{ width: "6rem" }}
-            onClick={() => setFiveCity("bari")}
+            onClick={() => setFiveCity("BARI")}
           >
             BARI
           </Button>
           <Button
             className="mx-3 rounded-5"
             style={{ width: "12rem" }}
-            onClick={() => setFiveCity("san pietro in bevagna")}
+            onClick={() => setFiveCity("SAN PIETRO IN BEVAGNA")}
           >
             SAN PIETRO IN B.
           </Button>
@@ -87,17 +87,20 @@ const HomeWeather = function (props) {
           <>
             <Card
               style={{ width: "60%" }}
-              className="d-flex align-items-center"
+              className="d-flex align-items-center flex-row"
             >
-              <h2 className="text-start mx-5 mt-4">{fiveCity}</h2>
-              <h3 className="text-start mx-5 mt-4">Current Weather</h3>
-              <p className="text-start mx-5 mt-1 fs-3 p-0">{currentHour()}</p>
-              <div className="d-flex justify-content-center flex-row">
+              <div>
+                <h2 className="text-start mx-5 mt-4">{fiveCity}</h2>
+                <h3 className="text-start mx-5 mt-4">Current Weather</h3>
+                <p className="text-start mx-5 mt-1 fs-3 p-0">{currentHour()}</p>
                 <img
-                  variant="top"
                   src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
                   width="25%"
+                  className="d-flex justify-content-center"
                 />
+              </div>
+
+              <div className="d-flex justify-content-center flex-row">
                 <Card.Body className="d-flex flex-column">
                   <Card.Title className="fs-1 ">
                     {(weatherData.main.temp - 273.15).toFixed(2)} C°

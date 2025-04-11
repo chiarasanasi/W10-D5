@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import AlertError from "./AlertError"
-import { Card, Button, Col, Container, Row } from "react-bootstrap"
+import { Card, Col, Container, Row } from "react-bootstrap"
 
 const Weather = function (props) {
   const [photo, setPhoto] = useState(null)
